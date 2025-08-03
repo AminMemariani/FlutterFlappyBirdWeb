@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 – Lost in the Clouds</title>
+  <style>
+    /* ----------- Reset & Layout ----------- */
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg, #87ceeb 0%, #b4e0ff 100%);
+      overflow: hidden;
+    }
+
+    .wrapper {
+      position: relative;
+      text-align: center;
+    }
+
+    /* ----------- Big digits ----------- */
+    h1 {
+      font-size: 10rem;
+      letter-spacing: 0.1rem;
+      margin: 0;
+      color: #fff;
+      text-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    }
+
+    /* ----------- Caption ----------- */
+    p {
+      margin-top: -0.5rem;
+      margin-bottom: 2.5rem;
+      font-size: 1.5rem;
+      color: #fff;
+    }
+
+    /* ----------- Home button ----------- */
+    .btn {
+      border: none;
+      background: #ffcb05;
+      color: #222;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 0.9rem 2rem;
+      border-radius: 9999px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.12s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.06);
+    }
+
+    /* ----------- Flying bird animation ----------- */
+    .bird {
+      width: 120px;
+      position: absolute;
+      top: -60px;
+      left: -160px;
+      animation: flyAcross 6s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes flyAcross {
+      0%   { transform: translate(-160px, -30px) rotate(0deg); }
+      50%  { transform: translate(calc(100vw + 160px), 60px) rotate(15deg); }
+      100% { transform: translate(-160px, -30px) rotate(0deg); }
+    }
+
+    /* ----------- Responsive tweaks ----------- */
+    @media (max-width: 600px) {
+      h1 { font-size: 6rem; }
+      p  { font-size: 1.1rem; }
+      .bird { width: 80px; top: -40px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <!-- Replace the src below with your own bird asset or keep the SVG inline -->
+    <img class="bird" src="assets/bird.png" alt="Flying bird" onerror="this.outerHTML = '<svg class=\'bird\' viewBox=\'0 0 64 64\' xmlns=\'http://www.w3.org/2000/svg\'><circle cx=\'32\' cy=\'32\' r=\'28\' fill=\'white\'/><circle cx=\'24\' cy=\'28\' r=\'5\' fill=\'#222\'/><polygon points=\'40,32 58,24 58,40\' fill=\'#ffcb05\'/></svg>';" />
+
+    <h1>404</h1>
+    <p>Oops – this page flew away.</p>
+    <button class="btn" onclick="window.location.replace('/')">Take&nbsp;me&nbsp;home</button>
+  </div>
+</body>
+</html>
